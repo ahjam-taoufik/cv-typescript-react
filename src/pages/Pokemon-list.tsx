@@ -7,8 +7,6 @@ const PokemonList: FunctionComponent= () => {
     useEffect(() => {
       setPokemon(POKEMONS);
     }, []);
-
-
   return (
     <> 
       <h1 className="center">Pokémons</h1>

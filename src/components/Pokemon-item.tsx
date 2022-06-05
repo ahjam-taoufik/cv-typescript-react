@@ -18,6 +18,10 @@ export const PokemonItem:FunctionComponent<props> = ({pokemon,borderColor='green
      setColor('#000');
  }
 
+const formatDate=(date:Date):string=> {
+    return `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
+}
+
 
   return (
 
@@ -30,7 +34,8 @@ export const PokemonItem:FunctionComponent<props> = ({pokemon,borderColor='green
               <div className="card-content">
                 <p>{pokemon.name}</p>
                 <p>
-                  <small>{pokemon.created.toString()}</small>
+                  <small>{formatDate(pokemon.created)}</small>
+                  {/* <small>{pokemon.created.toString()}</small> */}
                 </p>
               </div>
             </div>

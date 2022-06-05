@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react'
+import React, {FunctionComponent, useState} from 'react'
 import Pokemon from '../models/pokemon';
 import './pokemon-item.css'
 
@@ -7,11 +7,22 @@ type props = {
     borderColor?:string,
 }
 
-export const PokemonItem:FunctionComponent<props> = ({pokemon,borderColor='red'}) => {
+export const PokemonItem:FunctionComponent<props> = ({pokemon,borderColor='green'}) => {
+     const [color, setColor]=useState<string>();
+
+ const showBorder=()=>{
+     setColor(borderColor);
+ }
+
+ const hideBorder=()=>{
+     setColor('#000');
+ }
+
+
   return (
 
-    <div className="col s6 m4">
-          <div className="card horizontal" style={{borderColor:borderColor}}>
+    <div className="col s6 m4" onMouseEnter={showBorder}  onMouseLeave={hideBorder} >
+          <div className="card horizontal" style={{borderColor:color}}>
             <div className="card-image">
               <img src={pokemon.picture} alt={pokemon.name} />
             </div>

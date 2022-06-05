@@ -2,11 +2,6 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { PokemonItem } from '../components/Pokemon-item';
 import Pokemon from '../models/pokemon';
 import { POKEMONS } from './../models/mock-pokemon';
-
-// type props = {
-//   pokemons: Pokemon[];
-// };
-
 const PokemonList: FunctionComponent= () => {
     const [pokemons, setPokemon] = useState<Pokemon[]>([]);
     useEffect(() => {
@@ -20,7 +15,7 @@ const PokemonList: FunctionComponent= () => {
       <div className="container">
         <div className="row">
           {pokemons.map((pokemon) => (
-            <PokemonItem key={pokemon.id} pokemon={pokemon} />
+            <PokemonItem key={pokemon.id} pokemon={pokemon} borderColor={'green'} />
           ))}
         </div>
       </div>

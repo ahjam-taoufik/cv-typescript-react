@@ -3,6 +3,7 @@ import {useNavigate, useParams } from 'react-router-dom';
 import PokemonForm from '../components/pokemon-form';
 import Pokemon from '../models/pokemon';
 import POKEMONS from '../models/mock-pokemon';
+import PokemonService from '../services/pokemon-service';
  
   
 const PokemonEdit: FunctionComponent= () => {
@@ -11,16 +12,11 @@ const PokemonEdit: FunctionComponent= () => {
   const params = useParams();
   
   useEffect(() => {
-    // POKEMONS.forEach(pokemon => {
-    //   if (params.id === pokemon.id.toString()) {
-    //     setPokemon(pokemon);
-    //   }
-    // })
-    fetch(`http://localhost:3001/pokemons/${params.id}`)
-    .then(response => response.json())
-    .then((pokemon) => {
-        if(pokemon.id) setPokemon(pokemon);
-    })
+    if(params.id) {
+      PokemonService.getPokemon(+params.id).then((pokemon) => {
+          setPokemon(pokemon);
+       })
+    }
   }, [params.id]);
     
   return (

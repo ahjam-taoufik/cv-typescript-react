@@ -7,9 +7,17 @@ const usePokemons  = () => {
     const [pokemons, setPokemon] = useState<Pokemon[]>([]);
     
     useEffect(() => {
-      setPokemon(POKEMONS);
+      // setPokemon(POKEMONS);
+      fetch('http://localhost:3001/pokemons')
+      .then(response => response.json())
+      .then((pokemons) => {
+        setPokemon(pokemons);
+      }
+      )
+
     }, []);
     
+
    
 
 

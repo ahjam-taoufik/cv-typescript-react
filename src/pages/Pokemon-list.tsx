@@ -12,18 +12,22 @@ const PokemonList= () => {
      const pokemons=usePokemons();
    
 
-
   return (
     <>
+    { pokemons &&
+     <div>
       <h1 className="center">Pokémons</h1>
       <div className="container">
         <div className="row">
           {pokemons.map((pokemon) => (
             <PokemonItem key={pokemon.id} pokemon={pokemon} borderColor={'red'} />
-          ))}
+            ))}
         </div>
       </div>
-    </>
+      </div>
+      
+    }
+      </>
   );
 };
 

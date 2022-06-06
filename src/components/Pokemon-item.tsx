@@ -43,7 +43,7 @@ export const PokemonItem:FunctionComponent<props> = ({pokemon,borderColor='green
               <div className="card-content">
                 <p>{pokemon.name}</p>
                 <p>
-                  <small>{formatDate(pokemon.created)}</small><br/>
+                  {/* <small>{formatDate(pokemon.created)}</small><br/> */}
                   {/* <small>{pokemon.created.toString()}</small> */}
                   {pokemon.types.map((type) => (
                     <span key={type} className={formatType(type)} >

@@ -12,11 +12,17 @@ const PokemonsDetail: FunctionComponent = () => {
   const params = useParams();
 
   useEffect(() => {
-    POKEMONS.forEach(pokemon => {
-      if (params.id === pokemon.id.toString()) {
-        setPokemon(pokemon);
-      }
+    // POKEMONS.forEach(pokemon => {
+    //   if (params.id === pokemon.id.toString()) {
+    //     setPokemon(pokemon);
+    //   }
+    // })
+    fetch(`http://localhost:3001/pokemons/${params.id}`)
+    .then(response => response.json())
+    .then((pokemon) => {
+        if(pokemon.id) setPokemon(pokemon);
     })
+
   }, [params.id]);
     
   return (
@@ -57,7 +63,7 @@ const PokemonsDetail: FunctionComponent = () => {
                       </tr> 
                       <tr> 
                         <td>Date de création</td> 
-                        <td>{formatDate(pokemon.created)}</td> 
+                        {/* <td>{formatDate(pokemon.created)}</td>  */}
                       </tr>
                     </tbody>
                   </table>

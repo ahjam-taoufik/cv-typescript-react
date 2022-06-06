@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import formatType from '../helpers/format-type';
 import Pokemon from './../models/pokemon';
+import PokemonService from './../services/pokemon-service';
 
 type Props = {
   pokemon: Pokemon;
@@ -146,13 +147,15 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
 
   const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
-    // console.log('pokemon form');
-    // console.log(form);
    const isFormValid = validateForm();
-
-
    if (isFormValid) {
-     navigate(`/pokemon/${pokemon.id}`)
+      pokemon.name=form.name.value;
+      pokemon.hp=form.hp.value;
+      pokemon.cp=form.cp.value;
+      pokemon.types=form.types.value;
+      PokemonService.updatePokemon(pokemon).then(()=> navigate(`/pokemon/${pokemon.id}`))
+
+     
    }
 
 

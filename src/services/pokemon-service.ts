@@ -16,6 +16,19 @@ export default class PokemonService {
       .catch(error=>this.handleError(error));
 
   }
+
+  static updatePokemon(pokemon: Pokemon): Promise<Pokemon> {
+    return fetch(`http://localhost:3001/pokemons/${pokemon.id}`,{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(pokemon)
+    })
+      .then(response => response.json())
+      .catch(error=>this.handleError(error));
+
+  }
  
   static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;

@@ -61,6 +61,32 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
       return form.types.value.includes(type);
   }
 
+  const handleInputChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+    const fieldName:string = e.target.name;
+    const fieldValue:string = e.target.value;
+    const newField:Field = {[fieldName]:{value:fieldValue}};
+    setForm({...form,...newField});
+  }
+   
+  const seletType=(type:string, e:React.ChangeEvent<HTMLInputElement>)=>{
+    const checked = e.target.checked;
+    let newField:Field;
+
+    if(checked){
+      const newType:string[]=form.types.value.concat([type]);
+      newField = {value:newType};
+    }
+    else{
+      const newType:string[]=form.types.value.filter((t:string)=>t!==type);
+      newField = {value:newType};
+    }
+    setForm({...form,...{types:newField}});
+  }
+
+
+
+
+
   return (
     <form>
       <div className="row">
@@ -78,17 +104,17 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
                 {/* Pokemon name */}
                 <div className="form-group">
                   <label htmlFor="name">Nom</label>
-                  <input id="name" type="text" className="form-control" defaultValue={form.name.value} ></input>
+                  <input id="name" name="name" onChange={e=>handleInputChange(e)} type="text" className="form-control" defaultValue={form.name.value} ></input>
                 </div>
-                {/* Pokemon hp */}
+                {/* Pokemon hp */}  
                 <div className="form-group">
                   <label htmlFor="hp">Point de vie</label>
-                  <input id="hp" type="number" className="form-control" defaultValue={form.hp.value}></input>
+                  <input id="hp" name="hp" onChange={e=>handleInputChange(e)} type="number" className="form-control" defaultValue={form.hp.value}></input>
                 </div>
                 {/* Pokemon cp */}
                 <div className="form-group">
                   <label htmlFor="cp">Dégâts</label>
-                  <input id="cp" type="number" className="form-control" defaultValue={form.cp.value}></input>
+                  <input id="cp" name="cp" onChange={e=>handleInputChange(e)} type="number" className="form-control" defaultValue={form.cp.value}></input>
                 </div>
                 {/* Pokemon types */}
                 <div className="form-group">
@@ -101,6 +127,7 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
                           type="checkbox"
                           className="filled-in"
                           defaultChecked={hasType(type)}
+                          onChange={e=>seletType(type,e)}
                           value={type}
                         ></input>
                         <span>

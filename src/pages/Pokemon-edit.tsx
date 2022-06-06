@@ -1,8 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import {useNavigate, useParams } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 import PokemonForm from '../components/pokemon-form';
 import Pokemon from '../models/pokemon';
-import POKEMONS from '../models/mock-pokemon';
 import PokemonService from '../services/pokemon-service';
  
   

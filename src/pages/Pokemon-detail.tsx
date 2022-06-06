@@ -1,8 +1,6 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import { Link,useParams } from 'react-router-dom';
 import Pokemon from '../models/pokemon';
-import POKEMONS from '../models/mock-pokemon';
-import formatDate from '../helpers/format-date';
 import formatType from '../helpers/format-type';
 import PokemonService from '../services/pokemon-service';
   

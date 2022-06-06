@@ -1,10 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { PokemonItem } from '../components/Pokemon-item';
 import usePokemons from '../hooks/usePokemons';
-import usePokemonsWithType from '../hooks/usePokemonsWithType';
-import Pokemon from '../models/pokemon';
-import { POKEMONS } from './../models/mock-pokemon';
-
 
 
 const PokemonList= () => {

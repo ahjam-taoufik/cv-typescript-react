@@ -1,5 +1,4 @@
-import React, {FunctionComponent, useState} from 'react'
-import formatDate from '../helpers/format-date';
+import {FunctionComponent, useState} from 'react'
 import Pokemon from '../models/pokemon';
 import './pokemon-item.css'
 import formatType from './../helpers/format-type';

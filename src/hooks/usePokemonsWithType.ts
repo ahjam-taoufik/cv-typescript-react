@@ -1,4 +1,4 @@
-import React, { useEffect, useState,FunctionComponent } from 'react'
+import  { useEffect, useState } from 'react'
 import { POKEMONS } from '../models/mock-pokemon';
 import Pokemon from '../models/pokemon';
 

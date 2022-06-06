@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { POKEMONS } from '../models/mock-pokemon';
+import { useEffect, useState } from 'react'
 import Pokemon from '../models/pokemon';
 import PokemonService from './../services/pokemon-service';
 

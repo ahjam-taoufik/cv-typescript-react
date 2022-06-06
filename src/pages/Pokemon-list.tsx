@@ -10,6 +10,7 @@ import { POKEMONS } from './../models/mock-pokemon';
 const PokemonList= () => {
     //  const pokemons=usePokemonsWithType('Feu');
      const pokemons=usePokemons();
+   
 
 
   return (

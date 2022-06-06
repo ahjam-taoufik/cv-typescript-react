@@ -28,6 +28,9 @@ const PokemonsDetail: FunctionComponent = () => {
             <div className="card hoverable"> 
               <div className="card-image">
                 <img src={pokemon.picture} alt={pokemon.name} style={{width: '250px', margin: '0 auto'}}/>
+                <Link to={`/pokemon/${pokemon.id}/edit`} className="btn btn-floating  halfway-fab waves-light">
+                  <i className="material-icons">edit</i>
+                  </Link>
               </div>
               <div className="card-stacked">
                 <div className="card-content">

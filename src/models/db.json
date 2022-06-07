@@ -125,6 +125,17 @@
       "types": [
         "Feu"
       ]
+    },
+    {
+      "id": 1654609285106,
+      "hp": 100,
+      "cp": 10,
+      "name": "pokerbre",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/185.png",
+      "types": [
+        "Normal",
+        "Plante"
+      ]
     }
   ]
 }

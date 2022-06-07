@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PokemonItem } from '../components/Pokemon-item';
 import usePokemons from '../hooks/usePokemons';
 
@@ -23,6 +24,11 @@ const PokemonList= () => {
       </div>
       
     }
+    <Link className="btn-floating btn-large waves-effect waves-light red z-depth-3"
+        style={{position: 'fixed', bottom: '25px', right: '25px'}}
+        to="/pokemon/add">
+        <i className="material-icons">add</i>
+      </Link>
       </>
   );
 };

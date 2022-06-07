@@ -3,6 +3,7 @@ import { Link,useParams } from 'react-router-dom';
 import Pokemon from '../models/pokemon';
 import formatType from '../helpers/format-type';
 import PokemonService from '../services/pokemon-service';
+import Loader from '../components/Loader';
   
   
 const PokemonsDetail: FunctionComponent = () => {
@@ -72,7 +73,7 @@ const PokemonsDetail: FunctionComponent = () => {
           </div>
         </div>
       ) : (
-        <h4 className="center">Aucun pokémon à afficher !</h4>
+        <h4 className="center"><Loader/></h4>
       )}
     </div>
   );

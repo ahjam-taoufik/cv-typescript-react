@@ -1,7 +1,13 @@
 # Run server json :
-  npm run start:api
+
+npm run start:api
+
+# Resource :
+
+https://www.alexandria-library.co/ressources-react/
 
 # Getting Started with Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

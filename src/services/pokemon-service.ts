@@ -60,8 +60,6 @@ export default class PokemonService {
 
   }
 
-
-
   static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;
   }

@@ -7,9 +7,8 @@
       "cp": "5",
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
       "types": [
-        "Plante",
         "Poison",
-        "Normal"
+        "Plante"
       ]
     },
     {
@@ -20,7 +19,8 @@
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
       "types": [
         "Feu",
-        "Plante"
+        "Plante",
+        "Eau"
       ]
     },
     {

@@ -5,6 +5,7 @@ import PokemonsDetail from './pages/Pokemon-detail';
 import PokemonList from './pages/Pokemon-list';
 import PokemonEdit from './pages/Pokemon-edit';
 import PokemonAdd from './pages/pokemon-add';
+import Login from './pages/Login';
 
 
 const App: FunctionComponent = () => {
@@ -18,6 +19,7 @@ const App: FunctionComponent = () => {
           </div>
        </nav>
           <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/" element={<PokemonList />} />
             <Route path="/pokemon" element={<PokemonList />} />
             <Route path="/pokemon/add" element={<PokemonAdd />} />

@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PokemonItem } from '../components/Pokemon-item';
+import PokemonSearch from '../components/Pokemon-search';
 import usePokemons from '../hooks/usePokemons';
 
 
@@ -16,6 +17,7 @@ const PokemonList= () => {
       <h1 className="center">Pokémons</h1>
       <div className="container">
         <div className="row">
+          <PokemonSearch />
           {pokemons.map((pokemon) => (
             <PokemonItem key={pokemon.id} pokemon={pokemon} borderColor={'red'} />
             ))}

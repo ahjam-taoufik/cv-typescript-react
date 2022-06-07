@@ -136,6 +136,16 @@
         "Normal",
         "Plante"
       ]
+    },
+    {
+      "id": 1654612524337,
+      "hp": 100,
+      "cp": 10,
+      "name": "test",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/200.png",
+      "types": [
+        "Normal"
+      ]
     }
   ]
 }

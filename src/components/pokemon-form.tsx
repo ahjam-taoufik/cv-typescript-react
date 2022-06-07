@@ -25,7 +25,7 @@ type Form = {
 
 const PokemonForm: FunctionComponent<Props> = ({ pokemon,isEditForm }) => {
   const navigate=useNavigate();
-  // console.log(isEditForm);
+  
   
   const [form, setForm] = useState<Form>({
     picture: {

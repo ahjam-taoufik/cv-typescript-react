@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import formatType from '../helpers/format-type';
 import Pokemon from './../models/pokemon';
 import PokemonService from './../services/pokemon-service';
@@ -154,13 +154,11 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
       pokemon.cp=form.cp.value;
       pokemon.types=form.types.value;
       PokemonService.updatePokemon(pokemon).then(()=> navigate(`/pokemon/${pokemon.id}`))
+   }}
 
-     
-   }
-
-
+   const deletePokemon = () => {
+    PokemonService.deletePokemon(pokemon).then(() => navigate('/pokemon'));
   }
-
 
   return (
     <form onSubmit={e=>handleSubmit(e)}>
@@ -173,6 +171,9 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
                 alt={pokemon.name}
                 style={{ width: '250px', margin: '0 auto' }}
               />
+              <span className="btn btn-floating  halfway-fab waves-light">
+                  <i onClick={deletePokemon} className="material-icons">delete</i>
+                  </span>
             </div>
             <div className="card-stacked">
               <div className="card-content">

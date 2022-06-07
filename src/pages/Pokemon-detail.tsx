@@ -19,6 +19,7 @@ const PokemonsDetail: FunctionComponent = () => {
        })
     }
   }, [params.id]);
+
     
   return (
     <div>
